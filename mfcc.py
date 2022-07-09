@@ -112,11 +112,9 @@ def fbank(spectrum, num_filter=num_filter):
             feats[k, i-1] = (right-k) / (right - center )
     #滤波
     feats = np.dot(spectrum,feats)
-
-    feats = np.where(feats == 0, np.finfo(float).eps, feats)
-
     #计算log得到Fbank
-    feats = 20*np.log10(feats)
+    feats = np.where(feats == 0, np.finfo(float).eps, feats)  
+    feats = np.log10(feats)
     return feats
 
 
