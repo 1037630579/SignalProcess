@@ -131,7 +131,7 @@ def mfcc(fbank, num_mfcc=num_mfcc):
     """
         FINISH by YOURSELF
     """
-    feats = dct(fbank,type=2,axis=1,norm= 'ortho')[:, 1:num_mfcc+1]
+    feats = dct(fbank,type=2,axis=1,norm= 'ortho')[:, 0:num_mfcc]
     return feats
 
 
